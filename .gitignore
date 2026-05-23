@@ -1,0 +1,101 @@
+# =========================
+# Go
+# =========================
+bin/
+dist/
+build/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+coverage.out
+vendor/
+
+# Go workspace
+go.work
+go.work.sum
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Terraform
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+terraform.rc
+terraform.tfvars
+terraform.tfvars.json
+.terraform.lock.hcl
+
+# =========================
+# Kubernetes
+# =========================
+kubeconfig
+*.kubeconfig
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# IDEs & Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Testing
+# =========================
+coverage/
+htmlcov/
+.cache/
+
+# =========================
+# Helm
+# =========================
+charts/*.tgz
+
+# =========================
+# Security
+# =========================
+secrets/
+*.pem
+*.key
+*.crt
+id_rsa
+id_rsa.pub
+
+# =========================
+# Misc
+# =========================
+tmp/
+temp/

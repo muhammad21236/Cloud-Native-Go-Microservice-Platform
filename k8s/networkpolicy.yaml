@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: go-api-network-policy
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: go-api
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - namespaceSelector: {}
+  egress:
+    - {}

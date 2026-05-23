@@ -18,7 +18,6 @@ module "vpc" {
     "10.0.102.0/24",
     "10.0.103.0/24"
   ]
-
   enable_nat_gateway = true
   single_nat_gateway = false
 
@@ -36,7 +35,8 @@ module "eks" {
 
   cluster_name    = var.cluster_name
   cluster_version = "1.31"
-
+  cluster_endpoint_public_access = true
+  cluster_endpoint_private_access = true
   subnet_ids = module.vpc.private_subnets
   vpc_id     = module.vpc.vpc_id
 
@@ -44,11 +44,11 @@ module "eks" {
 
   eks_managed_node_groups = {
     backend = {
-      desired_size = 3
-      min_size     = 3
-      max_size     = 10
+      desired_size = 1
+      min_size     = 1
+      max_size     = 3
 
-      instance_types = ["t3.medium"]
+      instance_types = ["t3.small"]
 
       capacity_type = "ON_DEMAND"
     }
